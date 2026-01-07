@@ -45,8 +45,8 @@ python main.py -d pu -c config_pu.yaml
 The code was tested on a system with:
 
 - **CPU:** multi-core processor
-- **RAM:** 16–32 GB
-- **GPU:** NVIDIA GPU with at least 8–12 GB of memory (training recommended on GPU)
+- **RAM:** 16 GB
+- **GPU:** NVIDIA TITAN V with 12 GB of memory
 
 **Training time (approximate):** ~15 minutes  
 **Inference time:** typically a few seconds
