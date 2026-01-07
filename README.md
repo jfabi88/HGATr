@@ -57,7 +57,8 @@ The code was tested on a system with:
 
 ## Acknowledgements
 
-Some parts of the code are derived from the GATr project [link](https://github.com/Qualcomm-AI-research/geometric-algebra-transformer):  
+Some parts of the code are derived from the GATr project [link](https://github.com/Qualcomm-AI-research/geometric-algebra-transformer):
+```text
 @inproceedings{brehmer2023geometric,
   title = {Geometric Algebra Transformer},
   author = {Brehmer, Johann and de Haan, Pim and Behrends, S{\"o}nke and Cohen, Taco},
@@ -77,4 +78,5 @@ Some parts of the code are derived from the GATr project [link](https://github.c
   eprint = {2311.04744},
   url = {https://arxiv.org/abs/2311.04744},
 }
+```
 
