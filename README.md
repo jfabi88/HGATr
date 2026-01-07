@@ -39,3 +39,19 @@ Example:
 ```bash
 python main.py -d pu -c config_pu.yaml
 ```
+
+## Computing Requirements
+
+The code was tested on a system with:
+
+- **CPU:** multi-core processor
+- **RAM:** 16–32 GB
+- **GPU:** NVIDIA GPU with at least 8–12 GB of memory (training recommended on GPU)
+
+**Training time (approximate):** ~15 minutes  
+**Inference time:** typically a few seconds
+
+**Notes:**
+
+- The code can also run on CPU-only systems, although training will be slower
+
