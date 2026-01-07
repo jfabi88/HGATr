@@ -46,7 +46,7 @@ The code was tested on a system with:
 
 - **CPU:** multi-core processor
 - **RAM:** 16 GB
-- **GPU:** NVIDIA TITAN V with 12 GB of memory
+- **GPU:**  NVIDIA T4 GPU
 
 **Training time (approximate):** ~15 minutes  
 **Inference time:** typically a few seconds
