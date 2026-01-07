@@ -10,7 +10,10 @@ current models, offering a compact solution for remote sensing applications.
 ## Prerequisites
 
 - Python 3.8 or higher
-- Required Python libraries are listed in `requirements.txt`
+- PyTorch 2.0.x (tested with CUDA 11.8)
+- PyTorch Lightning 2.1.3
+- xFormers 0.0.22
+- Other dependencies listed in `requirements.txt`
 
 The dependencies can be installed by running:
 ```bash
