@@ -55,3 +55,26 @@ The code was tested on a system with:
 
 - The code can also run on CPU-only systems, although training will be slower
 
+## Acknowledgements
+
+Some parts of the code are derived from the GATr project [link](https://github.com/Qualcomm-AI-research/geometric-algebra-transformer):  
+@inproceedings{brehmer2023geometric,
+  title = {Geometric Algebra Transformer},
+  author = {Brehmer, Johann and de Haan, Pim and Behrends, S{\"o}nke and Cohen, Taco},
+  booktitle = {Advances in Neural Information Processing Systems},
+  year = {2023},
+  volume = {37},
+  eprint = {2305.18415},
+  url = {https://arxiv.org/abs/2305.18415},
+}
+
+@inproceedings{dehaan2023euclidean,
+  title = {Euclidean, Projective, Conformal: Choosing a Geometric Algebra for Equivariant Transformers}, 
+  author = {Pim de Haan and Taco Cohen and Johann Brehmer},
+  booktitle = {Proceedings of the 27th International Conference on Artificial Intelligence and Statistics},
+  year = {2024},
+  volume = {27},
+  eprint = {2311.04744},
+  url = {https://arxiv.org/abs/2311.04744},
+}
+
