@@ -7,3 +7,33 @@ information into multivector representations, without additional trainable param
 structure of the data is possible to obtain an efficient integration of all hyperspectral sample dependencies. Experiments carried out
 on various benchmark datasets demonstrate that H-GATr is capable of achieving performance comparable to and even superior to
 current models, offering a compact solution for remote sensing applications.
+
+## Prerequisites
+
+- Python 3.8 or higher
+- Required Python libraries are listed in `requirements.txt`
+
+The dependencies can be installed by running:
+```bash
+pip install -r requirements.txt
+```
+
+## Usage
+
+The code can be executed by running the `main.py` script.
+
+Two command-line arguments are required:
+
+- `-d`: specifies the dataset to be used  
+  - `ksc` for Kennedy Space Center  
+  - `pu` for Pavia University  
+  - `sa` for Salinas  
+  - `ip` for Indian Pines  
+
+- `-c`: specifies the configuration file to be used.  
+  The configuration file must be placed in the `configs/` directory.
+
+Example:
+```bash
+python main.py -d pu -c config_pu.yaml
+```
