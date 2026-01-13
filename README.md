@@ -32,12 +32,15 @@ Two command-line arguments are required:
   - `sa` for Salinas  
   - `ip` for Indian Pines  
 
-- `-c`: specifies the configuration file to be used.  
+- `-c`: specifies the configuration file to use
+- `-g`: specifies the GPU index
+- `-l`: specifies the number of training run
+- `-s`: specifies the directory where the data will be saved
   The configuration file must be placed in the `configs/` directory.
 
 Example:
 ```bash
-python main.py -d pu -c config_pu.yaml
+python main.py -d pu -c config_pu.yaml -g 0  -l 10 -s pu_test
 ```
 
 ## Computing Requirements
