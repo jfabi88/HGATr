@@ -99,12 +99,12 @@ def split_by_percentage(labels, prob):
     # Seleziona randomicamente gli indici
     random_non_zero_labels_coords = random.sample(non_zero_labels_coords, num_samples)
 
-    unique_classes = torch.unique(labels[labels != 0])
+    unique_classes = np.unique(labels[labels != 0])
     selected_coords_set = set(random_non_zero_labels_coords)
 
     for cls in unique_classes.tolist():
         # Trova tutti i pixel appartenenti a quella classe
-        cls_indices = np.where(labels.numpy() == cls)
+        cls_indices = np.where(labels == cls)
         cls_coords = list(zip(cls_indices[0], cls_indices[1]))
 
         # Filtra quelli già selezionati
@@ -118,7 +118,6 @@ def split_by_percentage(labels, prob):
             # Seleziona in modo randomico quelli mancanti
             extra = random.sample(remaining, min(needed, len(remaining)))
             selected_coords_set.update(extra)
-
 
     mask = torch.zeros_like(labels, dtype=torch.bool)
 
@@ -174,7 +173,6 @@ def create_windows(image, image_2, image_3, mask, labels, window_size=16):
         list: Una lista di tuple (finestra, label).
     """
     dataset = []
-    c, h, w = image.shape
     pad = window_size // 2  # Padding necessario per centrare il pixel
 
     # Applica un padding all'immagine per gestire i bordi
@@ -185,8 +183,6 @@ def create_windows(image, image_2, image_3, mask, labels, window_size=16):
         padded_image_2 = torch.nn.functional.pad(image_2, (pad, pad, pad, pad), "replicate")
     if image_3 != None:
         padded_image_3 = torch.nn.functional.pad(image_3, (pad, pad, pad, pad), "replicate")
-    print("Padded image shape: ", padded_image.shape)
-    print("Padded image shape2: ", padded_image_2.shape)
 
     # Trova le coordinate (riga, colonna) dei pixel True nella maschera
     rows, cols = torch.where(mask)
@@ -242,7 +238,7 @@ def create_datasets(data, hor_info, vert_info, vol_info, split_mode, labels, win
 
     test_mask = ~mask
     test_mask_filtered = test_mask & (labels > 0)
-    test_dataset_windows = create_windows(new_data[0], new_data[1], new_data[2], test_mask_filtered, window_size)
+    test_dataset_windows = create_windows(new_data[0], new_data[1], new_data[2], test_mask_filtered, labels, window_size)
 
     n_val = int(len(test_dataset_windows) * 0.1)
     indices = np.random.permutation(len(test_dataset_windows))
